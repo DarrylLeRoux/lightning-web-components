@@ -1,0 +1,14 @@
+{
+  "orgName": "Bike Card",
+  "edition": "Developer",
+  "features": ["EnableSetPasswordInApi"],
+  "description": "Making a bike card for darryllr@outlook.com",
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    }
+  }
+}
