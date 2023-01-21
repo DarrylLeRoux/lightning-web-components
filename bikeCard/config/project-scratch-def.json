@@ -2,6 +2,7 @@
   "orgName": "dleroux company",
   "edition": "Developer",
   "features": ["EnableSetPasswordInApi"],
+  "description": "Used for Bike Card in Trailhead",
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
