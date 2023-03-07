@@ -1,0 +1,19 @@
+<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.5 10H15.5V11H19.5V10Z" fill="black"/>
+<path d="M15.5 12H19.5V13H15.5V12Z" fill="black"/>
+<path d="M19.5 14H15.5V15H19.5V14Z" fill="black"/>
+<path d="M11.5 7H9.5V5H8.5V7H6.5V8H8.5V10H9.5V8H11.5V7Z" fill="black"/>
+<path d="M5.5 11H6.5V12H5.5V11Z" fill="black"/>
+<path d="M7.5 11H8.5V12H7.5V11Z" fill="black"/>
+<path d="M10.5 11H9.5V12H10.5V11Z" fill="black"/>
+<path d="M11.5 11H12.5V12H11.5V11Z" fill="black"/>
+<path d="M6.5 13H5.5V14H6.5V13Z" fill="black"/>
+<path d="M7.5 13H8.5V14H7.5V13Z" fill="black"/>
+<path d="M10.5 13H9.5V14H10.5V13Z" fill="black"/>
+<path d="M11.5 13H12.5V14H11.5V13Z" fill="black"/>
+<path d="M6.5 15H5.5V16H6.5V15Z" fill="black"/>
+<path d="M7.5 15H8.5V16H7.5V15Z" fill="black"/>
+<path d="M10.5 15H9.5V16H10.5V15Z" fill="black"/>
+<path d="M11.5 15H12.5V16H11.5V15Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4 3C3.72386 3 3.5 3.22386 3.5 3.5V20H2C1.72386 20 1.5 20.2239 1.5 20.5C1.5 20.7761 1.72386 21 2 21H23C23.2761 21 23.5 20.7761 23.5 20.5C23.5 20.2239 23.2761 20 23 20H21.5V9.5C21.5 9.10218 21.342 8.72065 21.0607 8.43934C20.7794 8.15804 20.3978 8 20 8H14.5V3.5C14.5 3.22386 14.2761 3 14 3H4ZM20.3536 9.14645C20.4473 9.24021 20.5 9.36739 20.5 9.5V20H14.5V9H20C20.1326 9 20.2598 9.05268 20.3536 9.14645ZM13.5 20H4.5V4H13.5V20Z" fill="black"/>
+</svg>

@@ -1,0 +1,26 @@
+<template>
+  <lightning-card class="slds-p-around_medium slds-size_small">
+    <h1 class="slds-p-around_medium">Asset Selection Component</h1>
+
+    <lightning-combobox
+      name="Asset Selector"
+      label={label}
+      value={value}
+      placeholder="Select Asset"
+      options={options}
+      onchange={handlePicklistChange}
+      class="slds-p-around_medium"
+    >
+    </lightning-combobox>
+
+    <div class="slds-p-around_medium">
+      <h2>Your selection is:</h2>
+      <br />
+      <p><strong>Path: </strong>{value}</p>
+      <br />
+      <p><strong>Output: </strong></p>
+      <br />
+      <img src={path} alt={value} />
+    </div>
+  </lightning-card>
+</template>
