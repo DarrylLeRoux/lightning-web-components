@@ -10,7 +10,7 @@
     <targetConfigs> 
         <targetConfig targets="lightningCommunity__Default">
             <property label="Selection type" name="type" type="String" datasource="img,svg,mask" default="img"/>
-            <property label="Image Choice" name="imageChoice" datasource="people_approved,people_edit,people_fail,people_international" type="String" />
+            <property label="Image Choice" name="imageChoice" datasource="people_approved,people_edit,people_fail,people_international"  type="String" />         
         </targetConfig> 
-    </targetConfigs>
+    </targetConfigs>  
 </LightningComponentBundle>
