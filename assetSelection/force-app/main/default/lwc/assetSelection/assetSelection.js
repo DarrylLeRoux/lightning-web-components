@@ -1,58 +1,10 @@
 import { LightningElement, api } from "lwc";
-import assetFolder from "@salesforce/resourceUrl/visualAssets";
-// const ASSET_PATH = '/sfsites/c/resource/visualAssets/';
+const ASSET_PATH = "/sfsites/c/resource/visualAssets/";
 
 export default class AssetSelection extends LightningElement {
   @api type;
   @api imageColor;
   @api imageChoice;
-
-  // FETCH METHOD TO GET FOLDERS
-  //Create a method that merges the path options based on options selected in properties
-
-  // get folders within the static resource
-  connectedCallback() {
-    const staticResourceUrl = new URL(
-      assetFolder,
-      // eslint-disable-next-line no-restricted-globals
-      location.href
-    ).href;
-
-    fetch(staticResourceUrl)
-      .then((response) => {
-        console.log("Fetch response:", response);
-        if (!response.ok) {
-          throw new Error("Failed to load static resource");
-        }
-        return response.text();
-      })
-      .then((text) => {
-        console.log("Static resource text:", text);
-        if (text.contains("")) {
-          console.log(text);
-        }
-        const folderNames = new Set();
-        const lines = text.split("\n");
-        for (let i = 0; i < lines.length; i++) {
-          const line = lines[i].trim();
-          if (line.startsWith("staticresources/visualAssets/")) {
-            const parts = line.split("/");
-            console.log("parts: ", parts);
-            if (parts.length >= 3) {
-              const folderName = parts[2];
-              folderNames.push(folderName);
-              if (folderName) {
-                folderNames.add(Array.from(folderNames));
-              }
-            }
-          }
-        }
-        console.log("Folder names:", folderNames);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }
 
   // initial value
   value = "";
@@ -65,7 +17,6 @@ export default class AssetSelection extends LightningElement {
       (option) => option.value === this.value
     );
     this.folder = selectedOption.folder;
-    console.log("In handlePicklistChange", this.folder, this.value);
   }
 
   // combobox selections
@@ -169,34 +120,75 @@ export default class AssetSelection extends LightningElement {
 
   //Create a method  that extracts the folder name
   getFolder() {
-    let folderPath = this.folder;
     //manipulate the string from the options array so that it returns the options attribute
-    folderPath = folderPath.replace("/", "");
-    console.log("getFolder", folderPath);
+    let folderPath = this.folder.replace("/", "");
     return folderPath;
   }
 
   //Create a method that extracts the file name
   getFile() {
-    let getFile = this.value;
     //manipulate the string from the options array so that it returns the file without the extension
-    getFile = getFile.replace(".svg", "");
-    console.log("getFile", getFile);
+    let getFile = this.value.replace(".svg", "");
     return getFile;
   }
 
   // build your url
   pathMerge(getFolder, getFile) {
-    const fullPath = assetFolder + "/" + getFolder + "/" + getFile + ".svg";
-    console.log("pathMerge", fullPath);
+    const fullPath = ASSET_PATH + getFolder + "/" + getFile + ".svg";
     return fullPath;
   }
 
   // get the full path
   get assetFullPath() {
-    if (!this.getFile() || !this.getFolder()) {
-      return "No asset Selected";
-    }
-    return this.pathMerge(this.getFolder(), this.getFile());
+    return !this.getFile() || !this.getFolder()
+      ? "No asset Selected"
+      : this.pathMerge(this.getFolder(), this.getFile());
   }
 }
+
+// FETCH METHOD TO GET FOLDERS
+//Create a method that merges the path options based on options selected in properties
+
+// get folders within the static resource
+// connectedCallback() {
+//   const staticResourceUrl = new URL(
+//     assetFolder,
+//     // eslint-disable-next-line no-restricted-globals
+//     location.href
+//   ).href;
+
+//   fetch(staticResourceUrl)
+//     .then((response) => {
+//       console.log("Fetch response:", response);
+//       if (!response.ok) {
+//         throw new Error("Failed to load static resource");
+//       }
+//       return response.text();
+//     })
+//     .then((text) => {
+//       console.log("Static resource text:", text);
+//       if (text.contains("")) {
+//         console.log(text);
+//       }
+//       const folderNames = new Set();
+//       const lines = text.split("\n");
+//       for (let i = 0; i < lines.length; i++) {
+//         const line = lines[i].trim();
+//         if (line.startsWith("staticresources/visualAssets/")) {
+//           const parts = line.split("/");
+//           console.log("parts: ", parts);
+//           if (parts.length >= 3) {
+//             const folderName = parts[2];
+//             folderNames.push(folderName);
+//             if (folderName) {
+//               folderNames.add(Array.from(folderNames));
+//             }
+//           }
+//         }
+//       }
+//       console.log("Folder names:", folderNames);
+//     })
+//     .catch((error) => {
+//       console.error("Error:", error);
+//     });
+// }
